@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "040E40ABF8C141341A24ECEF9702EA1E10B17E0D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "AA2CAE996DC82C0520B5ED77D8247831013283C9" : 0,
+    "040E40ABF8C141341A24ECEF9702EA1E10B17E0D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B115CEFD-0341-4BB9-A283-C927968A1541",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "AA2CAE996DC82C0520B5ED77D8247831013283C9" : "solutionWeek5\/iOS2015-Week5\/",
+    "040E40ABF8C141341A24ECEF9702EA1E10B17E0D" : "iOSRecipieApp\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RecipeApp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RecipeApp\/RecipeApp.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/candeladd\/iOSRecipieApp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "040E40ABF8C141341A24ECEF9702EA1E10B17E0D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/IgnitionBoulder\/iOS2015-Week5.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AA2CAE996DC82C0520B5ED77D8247831013283C9"
+    }
+  ]
+}
