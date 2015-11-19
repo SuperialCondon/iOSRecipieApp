@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Eb-zy-cQs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Eb-zy-cQs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -35,7 +35,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5hF-kE-QXT" id="9Ew-qh-F9J">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -48,7 +48,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BdN-tg-2Qu" id="hvD-IC-Oye">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="330" y="408"/>
         </scene>
-        <!--View Controller-->
+        <!--Name View Controller-->
         <scene sceneID="oNR-AM-3zC">
             <objects>
-                <viewController id="o3L-Ku-QIZ" sceneMemberID="viewController">
+                <viewController id="o3L-Ku-QIZ" customClass="NameViewController" customModule="RecipeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Npb-xf-9MU"/>
                         <viewControllerLayoutGuide type="bottom" id="VVf-5b-4Tt"/>
@@ -109,6 +109,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="Title" destination="Xdf-Py-YcX" id="iTo-06-8nr"/>
+                        <outlet property="recipetitle" destination="Xdf-Py-YcX" id="MDr-bY-eaA"/>
+                        <outlet property="title" destination="Xdf-Py-YcX" id="qS4-L3-EBQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TsL-TK-0jH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,8 +131,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0D9-rE-FDN">
-                                <rect key="frame" x="288" y="285" width="25" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0D9-rE-FDN">
+                                <rect key="frame" x="288" y="285" width="97" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -145,19 +150,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1le-1l-Bpx">
-                                <rect key="frame" x="288" y="378" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1le-1l-Bpx">
+                                <rect key="frame" x="224" y="378" width="175" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Save Ingredient to Recipe"/>
                                 <connections>
                                     <action selector="saveING:" destination="ZYJ-UK-pLg" eventType="touchUpInside" id="uCy-Ey-GGh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTc-4N-dGT">
+                                <rect key="frame" x="210" y="441" width="181" height="30"/>
+                                <state key="normal" title="Add Instructions to Recipe"/>
+                                <connections>
+                                    <segue destination="TJU-wN-o33" kind="show" id="dRU-V4-Jbt"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vTc-4N-dGT" firstAttribute="centerX" secondItem="NOn-CP-fFS" secondAttribute="centerX" id="Oi5-qM-4dB"/>
                             <constraint firstItem="0D9-rE-FDN" firstAttribute="centerY" secondItem="NOn-CP-fFS" secondAttribute="centerY" id="P3y-2i-91H"/>
+                            <constraint firstItem="vTc-4N-dGT" firstAttribute="top" secondItem="1le-1l-Bpx" secondAttribute="bottom" constant="33" id="pCv-RO-aSy"/>
                             <constraint firstItem="0D9-rE-FDN" firstAttribute="centerX" secondItem="NOn-CP-fFS" secondAttribute="centerX" id="tWq-n7-Sdm"/>
                         </constraints>
                     </view>
@@ -170,6 +184,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ra-Br-073" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1693" y="408"/>
+        </scene>
+        <!--Add Instruction View Controller-->
+        <scene sceneID="PsQ-YB-tw0">
+            <objects>
+                <viewController id="TJU-wN-o33" customClass="addInstruction_ViewController" customModule="RecipeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8g2-I9-fQu"/>
+                        <viewControllerLayoutGuide type="bottom" id="EOk-2v-6Ic"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ejK-rx-mkJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Type Instruction Below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuT-Dg-uoQ">
+                                <rect key="frame" x="147" y="135" width="174" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="TEST" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="feK-KE-qWV">
+                                <rect key="frame" x="77" y="187" width="315" height="280"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dmw-Xt-uZ6">
+                                <rect key="frame" x="145" y="492" width="179" height="30"/>
+                                <state key="normal" title="Save Instruction to Recipe"/>
+                                <connections>
+                                    <action selector="addInstruction:" destination="TJU-wN-o33" eventType="touchUpInside" id="23p-ny-JTJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="feK-KE-qWV" firstAttribute="centerX" secondItem="DuT-Dg-uoQ" secondAttribute="centerX" id="Xka-Bz-QBf"/>
+                            <constraint firstItem="DuT-Dg-uoQ" firstAttribute="centerX" secondItem="ejK-rx-mkJ" secondAttribute="centerX" id="jwn-5V-KJz"/>
+                            <constraint firstItem="feK-KE-qWV" firstAttribute="top" secondItem="DuT-Dg-uoQ" secondAttribute="bottom" constant="31" id="q2a-uC-nvD"/>
+                            <constraint firstItem="Dmw-Xt-uZ6" firstAttribute="centerX" secondItem="feK-KE-qWV" secondAttribute="centerX" id="wWN-rj-bAY"/>
+                            <constraint firstItem="Dmw-Xt-uZ6" firstAttribute="top" secondItem="feK-KE-qWV" secondAttribute="bottom" constant="25" id="y6e-Y4-4fE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="instruction" destination="feK-KE-qWV" id="b7k-6z-zOc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sMd-MP-SCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2370" y="408"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="7iY-IV-zdp">
@@ -185,7 +247,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bO5-h2-fFw" id="1bW-ba-bik">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>

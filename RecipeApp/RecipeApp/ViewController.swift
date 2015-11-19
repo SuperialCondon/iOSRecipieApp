@@ -22,6 +22,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if let controller = segue.destinationViewController as? NameViewController {
+//            controller.recipe = self.recipe
+//        }
+//    }
 
 }
 

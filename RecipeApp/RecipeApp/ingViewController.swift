@@ -9,21 +9,22 @@
 import UIKit
 
 class ingViewController: UIViewController {
-        var recipe = Recipe()
-
+    
+    var recipe = Recipe()
     @IBOutlet weak var IngredientName: UITextField!
     
+    
     @IBOutlet weak var Ingquantity: UITextField!
+    
     
     
    
     @IBAction func saveING(sender: AnyObject) {
         if let name = IngredientName.text, let IngQuantity = Ingquantity.text {
             if let quantity = Int(IngQuantity){
-                let ingredient = Ingredient(name: name, quantity: quantity)
+                recipe.addIngredient(name, newquantity: quantity)
             }
         }
-        Recipe.addIngredient(name, quantity)
     }
     
     override func viewDidLoad() {
@@ -42,11 +43,9 @@ class ingViewController: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        
+//    }
+    
 
 }

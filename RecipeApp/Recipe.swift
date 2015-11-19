@@ -8,9 +8,15 @@
 
 import Foundation
 class Recipe {
+    var name: String = ""
     var ingredients = [Ingredient]()
-    var instrution:[String] = []
+    var instructions:[String] = []
     func addIngredient(newname: String, newquantity: Int) {
         ingredients.append(Ingredient(name: newname, quantity: newquantity))
+    }
+    var numberOfInstructions = 0;
+    func addInstruction(instruction: String){
+        numberOfInstructions++
+        instructions.append(instruction)
     }
 }
