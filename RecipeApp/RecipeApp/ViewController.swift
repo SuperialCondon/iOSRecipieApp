@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
    var recipe = Recipe()
     
 
@@ -22,11 +22,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if let controller = segue.destinationViewController as? NameViewController {
-//            controller.recipe = self.recipe
-//        }
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let controller = segue.destinationViewController as? NameViewController {
+            controller.recipe = self.recipe
+            print("test")
+        }
+    }
 
 }
 

@@ -10,7 +10,7 @@ import UIKit
 
 class ingViewController: UIViewController {
     
-    var recipe = Recipe()
+    var recipe:Recipe!
     @IBOutlet weak var IngredientName: UITextField!
     
     
@@ -36,6 +36,10 @@ class ingViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
     }
     
 

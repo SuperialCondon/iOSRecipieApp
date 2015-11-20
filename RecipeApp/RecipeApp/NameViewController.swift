@@ -14,8 +14,11 @@ class NameViewController: UIViewController {
 
     @IBOutlet weak var recipetitle: UITextField!
     
-    if let recipeName = recipetitle.text? {
-    recipe.name = recipeName
+    @IBAction func saveTitle(sender: AnyObject) {
+        if let recipeName = recipetitle.text {
+            recipe.name = recipeName
+        }
+
     }
     
     override func viewDidLoad() {

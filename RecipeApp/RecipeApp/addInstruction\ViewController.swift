@@ -10,10 +10,8 @@ import UIKit
 
 class addInstruction_ViewController: UIViewController {
 
-    
-    @IBOutlet weak var instruction: UITextView!
-    
     @IBAction func addInstruction(sender: AnyObject) {
+        return
     }
     
     override func viewDidLoad() {
