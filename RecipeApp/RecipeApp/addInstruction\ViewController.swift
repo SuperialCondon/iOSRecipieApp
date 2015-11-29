@@ -9,7 +9,8 @@
 import UIKit
 
 class addInstruction_ViewController: UIViewController {
-
+    var recipe:Recipe!
+    
     @IBAction func addInstruction(sender: AnyObject) {
         return
     }
@@ -24,6 +25,7 @@ class addInstruction_ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*

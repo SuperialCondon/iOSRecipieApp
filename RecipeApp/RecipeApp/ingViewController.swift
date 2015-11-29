@@ -39,6 +39,10 @@ class ingViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let controller = segue.destinationViewController as? NameViewController {
+            controller.recipe = self.recipe
+            
+        }
         
     }
     
