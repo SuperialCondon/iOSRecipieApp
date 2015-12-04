@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Eb-zy-cQs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Eb-zy-cQs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -41,14 +41,15 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5hF-kE-QXT" id="9Ew-qh-F9J">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bBG-Dr-SHM">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -57,23 +58,22 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="mUq-h5-tzn" kind="showDetail" id="0sG-WS-90W"/>
+                                    <segue destination="mUq-h5-tzn" kind="showDetail" identifier="cell" id="0sG-WS-90W"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="cyH-BD-rIE" id="Xtp-IM-JLH"/>
-                            <outlet property="delegate" destination="cyH-BD-rIE" id="mZX-CU-RDx"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Recipes" id="fKW-tw-JX5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7v6-KT-fu5">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="o3L-Ku-QIZ" kind="show" id="VyI-PK-nOL"/>
+                                <segue destination="o3L-Ku-QIZ" kind="show" id="JV6-Wj-QyY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableview" destination="afq-Ya-XVP" id="b7s-TK-xwi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2w-2u-mxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,9 +110,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDy-de-Xal">
                                 <rect key="frame" x="285" y="512" width="30" height="30"/>
+                                <animations/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijp-ZT-seC">
                                 <rect key="frame" x="246" y="361" width="109" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Add Ingredients"/>
                                 <connections>
                                     <segue destination="ZYJ-UK-pLg" kind="show" id="BHQ-oc-ykZ"/>
@@ -125,7 +127,7 @@
                                     <constraint firstAttribute="height" constant="21" id="qUA-bF-uPw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -189,6 +191,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTc-4N-dGT">
                                 <rect key="frame" x="210" y="453" width="181" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Add Instructions to Recipe"/>
                                 <connections>
                                     <segue destination="TJU-wN-o33" kind="show" id="dRU-V4-Jbt"/>
@@ -196,14 +199,16 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhk-M8-UwH">
                                 <rect key="frame" x="237" y="256" width="127" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ingredient Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xp-W1-ReV">
                                 <rect key="frame" x="228" y="328" width="147" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -249,54 +254,80 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Type Instruction Below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuT-Dg-uoQ">
                                 <rect key="frame" x="213" y="162" width="174" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ddu-hq-VSt">
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.13" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dmw-Xt-uZ6">
                                 <rect key="frame" x="211" y="372" width="179" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Save Instruction to Recipe"/>
                                 <connections>
                                     <action selector="addInstruction:" destination="TJU-wN-o33" eventType="touchUpInside" id="23p-ny-JTJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFF-Ht-SDz">
+                                <rect key="frame" x="282" y="425" width="37" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="Recipe_Complete:" destination="TJU-wN-o33" eventType="touchUpInside" id="Sez-SR-nOZ"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Dmw-Xt-uZ6" firstAttribute="centerX" secondItem="ejK-rx-mkJ" secondAttribute="centerX" id="1Ja-sq-LmP"/>
                             <constraint firstItem="DuT-Dg-uoQ" firstAttribute="centerX" secondItem="ejK-rx-mkJ" secondAttribute="centerX" id="1ys-6d-80w"/>
                             <constraint firstItem="Ddu-hq-VSt" firstAttribute="top" secondItem="DuT-Dg-uoQ" secondAttribute="bottom" constant="53" id="4UF-Eu-bl1"/>
                             <constraint firstItem="Ddu-hq-VSt" firstAttribute="centerX" secondItem="ejK-rx-mkJ" secondAttribute="centerX" id="NK6-Dl-p3w"/>
+                            <constraint firstItem="vFF-Ht-SDz" firstAttribute="centerX" secondItem="ejK-rx-mkJ" secondAttribute="centerX" id="RWQ-GO-vB2"/>
                             <constraint firstItem="Ddu-hq-VSt" firstAttribute="centerY" secondItem="ejK-rx-mkJ" secondAttribute="centerY" id="l1F-Ae-mJ9"/>
+                            <constraint firstItem="vFF-Ht-SDz" firstAttribute="top" secondItem="Dmw-Xt-uZ6" secondAttribute="bottom" constant="23" id="scX-y0-Pse"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Instructions" id="8h1-Ac-qsU"/>
+                    <connections>
+                        <outlet property="instructionText" destination="Ddu-hq-VSt" id="ghl-c6-5ay"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMd-MP-SCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2370" y="408"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Detail Table View Controller-->
         <scene sceneID="7iY-IV-zdp">
             <objects>
-                <tableViewController id="mUq-h5-tzn" sceneMemberID="viewController">
+                <tableViewController id="mUq-h5-tzn" customClass="detailTableViewController" customModule="RecipeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PgL-tu-zCf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="w71-6C-OS2" userLabel="Back">
+                            <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <state key="normal" title="Back"/>
+                            <connections>
+                                <segue destination="7Eb-zy-cQs" kind="show" id="ZPF-SR-Syc"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bO5-h2-fFw">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bO5-h2-fFw" id="1bW-ba-bik">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -311,7 +342,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uko-5p-Pt4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992" y="1150"/>
+            <point key="canvasLocation" x="965" y="1155"/>
         </scene>
     </scenes>
 </document>

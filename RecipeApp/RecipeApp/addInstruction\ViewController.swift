@@ -9,33 +9,31 @@
 import UIKit
 
 class addInstruction_ViewController: UIViewController {
+    
+    var recipesArr = Recipes()
     var recipe:Recipe!
     
+    @IBOutlet weak var instructionText: UITextView!
+    
     @IBAction func addInstruction(sender: AnyObject) {
-        return
+        if let instruction = instructionText.text{
+            recipe.addInstruction(instruction)
+            print (recipe.title)
+            print(recipe.instructions)
+            
+        }
+        instructionText.text = ""
+        
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBAction func Recipe_Complete(sender: AnyObject) {
+        recipesArr.recipes.append(recipe)
+        for i in recipesArr.recipes{
+            print(i.title)
+        }
+        self.navigationController?.popToRootViewControllerAnimated(true)
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }

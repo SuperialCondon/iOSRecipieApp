@@ -8,7 +8,7 @@
 
 import Foundation
 class Recipe {
-    var name: String = ""
+    var title: String = ""
     var ingredients = [Ingredient]()
     var instructions:[String] = []
     func addIngredient(newname: String, newquantity: Int) {
@@ -19,4 +19,7 @@ class Recipe {
         numberOfInstructions++
         instructions.append(instruction)
     }
+}
+class Recipes {
+    var recipes = [Recipe]()
 }

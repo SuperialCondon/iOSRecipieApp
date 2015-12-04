@@ -10,13 +10,15 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    var recipes = [Recipe]()
+    var recipesArr = Recipes()
     
+    
+    @IBOutlet var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let exampleBurger = Recipe()
-        exampleBurger.name = "Example: Simple Cheeseburger"
+        exampleBurger.title = "Example: Simple Cheeseburger"
         exampleBurger.addIngredient("Bun", newquantity: 2)
         exampleBurger.addIngredient("Ground Beef Patty", newquantity: 1)
         exampleBurger.addIngredient("American Cheese Slice", newquantity: 1)
@@ -24,7 +26,7 @@ class ViewController: UITableViewController {
         exampleBurger.addInstruction("Place cheese slice on patty. Leave on grill until cheese has melted")
         exampleBurger.addInstruction("Remove patty with cheese, and place between the two buns")
         let exampleGrilledCheese = Recipe()
-        exampleGrilledCheese.name = "Example: Grilled Cheese"
+        exampleGrilledCheese.title = "Example: Grilled Cheese"
         exampleGrilledCheese.addIngredient("Bread Slice", newquantity: 2)
         exampleGrilledCheese.addIngredient("American Cheese Slice", newquantity: 2)
         exampleGrilledCheese.addIngredient("Unsalted Butter (teaspoon)", newquantity: 2)
@@ -33,9 +35,13 @@ class ViewController: UITableViewController {
         exampleGrilledCheese.addInstruction("Place bread slices on melted butter.")
         exampleGrilledCheese.addInstruction("After 2 to 3 minutes place cheese slice on each slice of bread. Move one slice onto the other so that cheese slices are touching")
         exampleGrilledCheese.addInstruction("Wait another 2 minutes, filpping sandwich after 1 minute")
-        recipes.append(exampleBurger)
-        recipes.append(exampleGrilledCheese)
+        recipesArr.recipes.append(exampleBurger)
+        recipesArr.recipes.append(exampleGrilledCheese)
         
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,15 +49,13 @@ class ViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipes.count
+        return recipesArr.recipes.count
     }
 
    
@@ -59,10 +63,26 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
         let row = indexPath.row
-        let recipeTitle = recipes[row]
+        let recipeTitle = recipesArr.recipes[row]
+        for i in recipesArr.recipes{
+            print (i.title)
+        }
         
-        cell.textLabel?.text = recipeTitle.name
+        cell.textLabel?.text = recipeTitle.title
         return cell
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //if let s = sender{
+          //  s.identifier
+      //  }
+        if let controller = segue.destinationViewController as? NameViewController {
+            controller.recipesArr = self.recipesArr
+            
+        }
+    }
+  
+  
+  
 }
 

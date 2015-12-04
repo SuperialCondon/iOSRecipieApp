@@ -11,6 +11,7 @@ import UIKit
 class ingViewController: UIViewController {
     
     var recipe:Recipe!
+    var recipesArr = Recipes()
     @IBOutlet weak var IngredientName: UITextField!
     
     
@@ -25,6 +26,8 @@ class ingViewController: UIViewController {
                 recipe.addIngredient(name, newquantity: quantity)
             }
         }
+        IngredientName.text = ""
+        Ingquantity.text = ""
     }
     
     override func viewDidLoad() {
@@ -39,8 +42,9 @@ class ingViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let controller = segue.destinationViewController as? NameViewController {
+        if let controller = segue.destinationViewController as? addInstruction_ViewController {
             controller.recipe = self.recipe
+            controller.recipesArr = self.recipesArr
             
         }
         

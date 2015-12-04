@@ -10,13 +10,14 @@ import UIKit
 
 class NameViewController: UIViewController {
     
+    var recipesArr = Recipes()
     var recipe = Recipe()
 
     @IBOutlet weak var recipetitle: UITextField!
     
     @IBAction func saveTitle(sender: AnyObject) {
-        if let recipeName = recipetitle.text {
-            recipe.name = recipeName
+        if let recipeTitle = recipetitle.text {
+            recipe.title = recipeTitle
         }
 
     }
@@ -33,21 +34,14 @@ class NameViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let controller = segue.destinationViewController as? NameViewController {
+        if let controller = segue.destinationViewController as? ingViewController {
             controller.recipe = self.recipe
+            controller.recipesArr = self.recipesArr
             
         }
 
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
