@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UITableViewController {
 
     var recipesArr = Recipes()
+    var clickedCell = 0
     
     
     @IBOutlet var tableview: UITableView!
@@ -57,6 +58,9 @@ class ViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipesArr.recipes.count
     }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -64,23 +68,38 @@ class ViewController: UITableViewController {
         
         let row = indexPath.row
         let recipeTitle = recipesArr.recipes[row]
-        for i in recipesArr.recipes{
-            print (i.title)
-        }
+        
+        
         
         cell.textLabel?.text = recipeTitle.title
         return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //if let s = sender{
-          //  s.identifier
-      //  }
+        if let identifier = segue.identifier{
+            if identifier == "addRecipe"{
+                if let controller = segue.destinationViewController as? NameViewController {
+                    controller.recipesArr = self.recipesArr
+                }
+            }
+            else if identifier == "cell"{
+                if let controller = segue.destinationViewController as? detailTableViewController {
+                    let cellNUM = tableView.indexPathForCell(sender as! UITableViewCell)
+                    controller.recipe = self.recipesArr.recipes[cellNUM!.row]
+                }
+            }
+            
+                
+            
+        }
+        
+        
         if let controller = segue.destinationViewController as? NameViewController {
             controller.recipesArr = self.recipesArr
             
         }
     }
+    
   
   
   

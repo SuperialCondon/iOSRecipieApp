@@ -9,9 +9,14 @@
 import UIKit
 
 class detailTableViewController: UITableViewController {
-
+    var recipe=Recipe()
+    
+    @IBAction func BackToRecipe(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(recipe.title)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,16 +39,21 @@ class detailTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return recipe.ingredients.count
+    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("RecipeCell", forIndexPath: indexPath)
+        let ingredient = recipe.ingredients[indexPath.row]
+        cell.textLabel?.text = ingredient.name
+        cell.detailTextLabel?.text = "Quantity: \(ingredient.quantity)"
 
-        // Configure the cell...
 
-        return cell
+        return UITableViewCell()
     }
     
 

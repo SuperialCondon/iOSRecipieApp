@@ -62,12 +62,16 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cyH-BD-rIE" id="LKh-W7-QGZ"/>
+                            <outlet property="delegate" destination="cyH-BD-rIE" id="3eX-cm-uql"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Recipes" id="fKW-tw-JX5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7v6-KT-fu5">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="o3L-Ku-QIZ" kind="show" id="JV6-Wj-QyY"/>
+                                <segue destination="o3L-Ku-QIZ" kind="show" identifier="addRecipe" id="JV6-Wj-QyY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -304,10 +308,10 @@
             </objects>
             <point key="canvasLocation" x="2370" y="408"/>
         </scene>
-        <!--Detail Table View Controller-->
+        <!--Ingredients-->
         <scene sceneID="7iY-IV-zdp">
             <objects>
-                <tableViewController id="mUq-h5-tzn" customClass="detailTableViewController" customModule="RecipeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Ingredients" id="mUq-h5-tzn" customClass="detailTableViewController" customModule="RecipeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PgL-tu-zCf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -319,16 +323,34 @@
                             <animations/>
                             <state key="normal" title="Back"/>
                             <connections>
-                                <segue destination="7Eb-zy-cQs" kind="show" id="ZPF-SR-Syc"/>
+                                <action selector="BackToRecipe:" destination="mUq-h5-tzn" eventType="touchUpInside" id="yKZ-qo-tx9"/>
                             </connections>
                         </button>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bO5-h2-fFw">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" textLabel="hL6-AA-RWI" detailTextLabel="SBC-75-imV" style="IBUITableViewCellStyleSubtitle" id="bO5-h2-fFw">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bO5-h2-fFw" id="1bW-ba-bik">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hL6-AA-RWI">
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SBC-75-imV">
+                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
@@ -339,6 +361,7 @@
                             <outlet property="delegate" destination="mUq-h5-tzn" id="5mM-S7-f7V"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uko-5p-Pt4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
