@@ -30,16 +30,24 @@ class detailTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
+        
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if (section == 0){
         return recipe.ingredients.count
+        }
+        else
+        {
+            return recipe.instructions.count
+        }
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -48,10 +56,15 @@ class detailTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("RecipeCell", forIndexPath: indexPath)
-        let ingredient = recipe.ingredients[indexPath.row]
-        cell.textLabel?.text = ingredient.name
-        cell.detailTextLabel?.text = "Quantity: \(ingredient.quantity)"
-
+        if (indexPath.section == 0){
+            let ingredient = recipe.ingredients[indexPath.row]
+            cell.textLabel?.text = ingredient.name
+            cell.detailTextLabel?.text = "Quantity: \(ingredient.quantity)"
+        }
+        else{
+            let instruction = recipe.instructions[indexPath.row]
+            cell.textLabel?.text = instruction
+        }
 
         return UITableViewCell()
     }
