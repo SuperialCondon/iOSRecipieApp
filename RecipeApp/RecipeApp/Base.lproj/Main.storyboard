@@ -58,7 +58,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="mUq-h5-tzn" kind="showDetail" identifier="cell" id="0sG-WS-90W"/>
+                                    <segue destination="mUq-h5-tzn" kind="show" identifier="cell" id="0sG-WS-90W"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -317,18 +317,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="w71-6C-OS2" userLabel="Back">
-                            <rect key="frame" x="0.0" y="72" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <animations/>
-                            <state key="normal" title="Back"/>
-                            <connections>
-                                <action selector="BackToRecipe:" destination="mUq-h5-tzn" eventType="touchUpInside" id="yKZ-qo-tx9"/>
-                            </connections>
-                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" textLabel="hL6-AA-RWI" detailTextLabel="SBC-75-imV" style="IBUITableViewCellStyleSubtitle" id="bO5-h2-fFw">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bO5-h2-fFw" id="1bW-ba-bik">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
