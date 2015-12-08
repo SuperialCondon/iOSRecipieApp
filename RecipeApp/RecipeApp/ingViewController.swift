@@ -14,10 +14,7 @@ class ingViewController: UIViewController {
     var recipesArr = Recipes()
     @IBOutlet weak var IngredientName: UITextField!
     
-    
     @IBOutlet weak var Ingquantity: UITextField!
-    
-    
     
    
     @IBAction func saveING(sender: AnyObject) {
