@@ -121,7 +121,7 @@
                                 <animations/>
                                 <state key="normal" title="Add Ingredients"/>
                                 <connections>
-                                    <segue destination="ZYJ-UK-pLg" kind="show" id="BHQ-oc-ykZ"/>
+                                    <action selector="addIngredientPressed:" destination="o3L-Ku-QIZ" eventType="touchUpInside" id="daU-vC-8bK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePK-1i-ss0">
@@ -152,6 +152,7 @@
                     <navigationItem key="navigationItem" title="Add a New Recipe" id="FVn-jH-7jj"/>
                     <connections>
                         <outlet property="recipetitle" destination="Xdf-Py-YcX" id="MDr-bY-eaA"/>
+                        <segue destination="ZYJ-UK-pLg" kind="show" identifier="toadding" id="pKY-mN-O05"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TsL-TK-0jH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -198,7 +199,7 @@
                                 <animations/>
                                 <state key="normal" title="Add Instructions to Recipe"/>
                                 <connections>
-                                    <segue destination="TJU-wN-o33" kind="show" id="dRU-V4-Jbt"/>
+                                    <action selector="addInstructionsPressed:" destination="ZYJ-UK-pLg" eventType="touchUpInside" id="pyE-ns-L9a"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhk-M8-UwH">
@@ -238,6 +239,7 @@
                     <connections>
                         <outlet property="Ingquantity" destination="7RJ-RF-QiB" id="mFD-MC-4WS"/>
                         <outlet property="IngredientName" destination="0D9-rE-FDN" id="Sl5-9M-gAO"/>
+                        <segue destination="TJU-wN-o33" kind="show" identifier="toaddint" id="dtq-9G-hud"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ra-Br-073" userLabel="First Responder" sceneMemberID="firstResponder"/>
