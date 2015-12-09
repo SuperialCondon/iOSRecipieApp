@@ -11,8 +11,8 @@ class Recipe {
     var title: String = ""
     var ingredients = [Ingredient]()
     var instructions:[String] = []
-    func addIngredient(newname: String, newquantity: Int) {
-        ingredients.append(Ingredient(name: newname, quantity: newquantity))
+    func addIngredient(newname: String, newquantity: Int, newmeasurement: String) {
+        ingredients.append(Ingredient(name: newname, quantity: newquantity, measurement: newmeasurement))
     }
     var numberOfInstructions = 0;
     func addInstruction(instruction: String){

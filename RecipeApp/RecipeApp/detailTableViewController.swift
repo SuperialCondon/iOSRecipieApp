@@ -39,6 +39,17 @@ class detailTableViewController: UITableViewController {
         
     }
 
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0
+        {
+            return "Ingredients"
+        }
+        else if section == 1
+        {
+            return "Instructions"
+        }
+        return "error"
+    }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if (section == 0){
@@ -59,14 +70,15 @@ class detailTableViewController: UITableViewController {
         if (indexPath.section == 0){
             let ingredient = recipe.ingredients[indexPath.row]
             cell.textLabel?.text = ingredient.name
-            cell.detailTextLabel?.text = "Quantity: \(ingredient.quantity)"
+            cell.detailTextLabel?.text = "Quantity: \(ingredient.quantity) \(ingredient.measurement)"
         }
         else{
             let instruction = recipe.instructions[indexPath.row]
-            cell.textLabel?.text = instruction
+            cell.textLabel?.text = "\(indexPath.row + 1). \(instruction)"
+            cell.detailTextLabel?.text = ""
         }
 
-        return UITableViewCell()
+        return cell
     }
     
 
