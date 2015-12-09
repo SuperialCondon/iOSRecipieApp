@@ -112,7 +112,7 @@
                                     <action selector="saveTitle:" destination="o3L-Ku-QIZ" eventType="touchUpInside" id="N8R-9f-bs0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDy-de-Xal">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDy-de-Xal">
                                 <rect key="frame" x="285" y="512" width="30" height="30"/>
                                 <animations/>
                             </button>
@@ -142,6 +142,7 @@
                             <constraint firstItem="ijp-ZT-seC" firstAttribute="centerX" secondItem="IDy-de-Xal" secondAttribute="centerX" id="BXb-7a-hbq"/>
                             <constraint firstItem="eIX-Kg-NAa" firstAttribute="centerX" secondItem="ijp-ZT-seC" secondAttribute="centerX" id="HyF-XA-NUq"/>
                             <constraint firstItem="Xdf-Py-YcX" firstAttribute="top" secondItem="ePK-1i-ss0" secondAttribute="bottom" constant="8" id="IZ3-e0-Uvp"/>
+                            <constraint firstItem="VVf-5b-4Tt" firstAttribute="top" secondItem="IDy-de-Xal" secondAttribute="bottom" constant="58" id="LhZ-uB-H8K"/>
                             <constraint firstItem="eIX-Kg-NAa" firstAttribute="top" secondItem="Xdf-Py-YcX" secondAttribute="bottom" constant="8" symbolic="YES" id="OQW-JN-AES"/>
                             <constraint firstItem="eIX-Kg-NAa" firstAttribute="centerX" secondItem="Qz5-g6-CeZ" secondAttribute="centerX" id="bi0-59-nk5"/>
                             <constraint firstItem="ePK-1i-ss0" firstAttribute="centerX" secondItem="Xdf-Py-YcX" secondAttribute="centerX" id="jOK-xd-BdY"/>
@@ -288,21 +289,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Type Instruction Below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuT-Dg-uoQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type Instruction Below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuT-Dg-uoQ">
                                 <rect key="frame" x="213" y="162" width="174" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ddu-hq-VSt">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ddu-hq-VSt">
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.13" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Kvz-o1-BK6"/>
+                                    <constraint firstAttribute="height" constant="128" id="mYH-ek-ksQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dmw-Xt-uZ6">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dmw-Xt-uZ6">
                                 <rect key="frame" x="211" y="372" width="179" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Save Instruction to Recipe"/>
@@ -310,7 +315,7 @@
                                     <action selector="addInstruction:" destination="TJU-wN-o33" eventType="touchUpInside" id="23p-ny-JTJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFF-Ht-SDz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFF-Ht-SDz">
                                 <rect key="frame" x="282" y="425" width="37" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Done"/>
@@ -327,6 +332,7 @@
                             <constraint firstItem="Ddu-hq-VSt" firstAttribute="top" secondItem="DuT-Dg-uoQ" secondAttribute="bottom" constant="53" id="4UF-Eu-bl1"/>
                             <constraint firstItem="Ddu-hq-VSt" firstAttribute="centerX" secondItem="ejK-rx-mkJ" secondAttribute="centerX" id="NK6-Dl-p3w"/>
                             <constraint firstItem="vFF-Ht-SDz" firstAttribute="centerX" secondItem="ejK-rx-mkJ" secondAttribute="centerX" id="RWQ-GO-vB2"/>
+                            <constraint firstItem="Dmw-Xt-uZ6" firstAttribute="top" secondItem="Ddu-hq-VSt" secondAttribute="bottom" constant="8" symbolic="YES" id="SNI-ay-zdU"/>
                             <constraint firstItem="Ddu-hq-VSt" firstAttribute="centerY" secondItem="ejK-rx-mkJ" secondAttribute="centerY" id="l1F-Ae-mJ9"/>
                             <constraint firstItem="vFF-Ht-SDz" firstAttribute="top" secondItem="Dmw-Xt-uZ6" secondAttribute="bottom" constant="23" id="scX-y0-Pse"/>
                         </constraints>

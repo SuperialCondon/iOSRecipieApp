@@ -10,6 +10,6 @@ import Foundation
 
 struct Ingredient{
     let name: String
-    let quantity: Int
+    let quantity: Float
     let measurement: String
 }

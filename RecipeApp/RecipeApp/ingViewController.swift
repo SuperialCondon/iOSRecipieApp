@@ -13,7 +13,7 @@ class ingViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     var recipe:Recipe!
     var recipesArr = Recipes()
     var name = ""
-    var quantity = 0
+    var quantity:Float = 0.0
     
     var measurements = [String]()
     var unit = ""
@@ -46,16 +46,38 @@ class ingViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             name = IngredientName.text!
             if Ingquantity.text != ""
             {
-                quantity = Int(Ingquantity.text!)!
-                recipe.addIngredient(name, newquantity: quantity, newmeasurement: unit)
-                let alertController = UIAlertController(title: ("\(name) was saved!"), message:
-                    "Now click add instructions to continue building your recipe or add some more ingredietnts", preferredStyle: UIAlertControllerStyle.Alert)
-                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-                self.presentViewController(alertController, animated: true, completion: nil)
-                print(recipe.title)
-                print(recipe.ingredients[0].measurement)
-                IngredientName.text = ""
-                Ingquantity.text = ""
+                let stringQuantity = (Ingquantity.text)!
+                if Float(stringQuantity) != nil
+                {
+                    quantity = Float(stringQuantity)!
+                    if quantity > 0
+                    {
+                        recipe.addIngredient(name, newquantity: quantity, newmeasurement: unit)
+                        let alertController = UIAlertController(title: ("\(name) was Saved!"), message:
+                            "Now click 'Add Instructions to Recipe' to continue building your recipe or continue adding more ingredients", preferredStyle: UIAlertControllerStyle.Alert)
+                        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                        print(recipe.title)
+                        print(recipe.ingredients[0].measurement)
+                        IngredientName.text = ""
+                        Ingquantity.text = ""
+                    }
+                    else
+                    {
+                        let alertController = UIAlertController(title: ("Bad Quantity"), message:
+                            "Please enter a quantity greater than 0", preferredStyle: UIAlertControllerStyle.Alert)
+                        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    }
+                }
+                else
+                {
+                    let alertController = UIAlertController(title: ("Bad Quantity"), message:
+                        "Please enter a number quantity", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+                
             }
             else
             {
