@@ -1,2 +1,2 @@
 # iOSRecipieApp
-create your own recipies, add ingredients, change number of batches, email to fiends!
+create your own recipies, add ingredients and instructions!
